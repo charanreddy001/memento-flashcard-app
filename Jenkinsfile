@@ -3,6 +3,7 @@ pipeline {
 
     environment {
         COMPOSE_PROJECT_NAME = 'memento'
+        CI = 'false'
     }
 
     tools {
@@ -40,7 +41,7 @@ pipeline {
             steps {
                 echo '🏗️ Building React production build...'
                 dir('client') {
-                    bat 'npm run build'
+                    bat 'set CI=false && npm run build'
                 }
             }
         }
@@ -81,7 +82,6 @@ pipeline {
         }
         failure {
             echo '❌ Pipeline failed! Check the logs above.'
-            bat 'docker-compose logs --tail=50'
         }
         always {
             echo '📋 Pipeline finished.'
