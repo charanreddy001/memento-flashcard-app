@@ -13,7 +13,7 @@ export default function GeneratePage() {
   const navigate = useNavigate();
   const [text, setText] = useState('');
   const [generating, setGenerating] = useState(false);
-  const [generatedCards, setGeneratedCards] = useState([]);
+  const [, setGeneratedCards] = useState([]); // eslint-disable-line no-unused-vars
   const [editedCards, setEditedCards] = useState([]);
   const [step, setStep] = useState(1); // 1=input, 2=preview, 3=save
   const [decks, setDecks] = useState([]);

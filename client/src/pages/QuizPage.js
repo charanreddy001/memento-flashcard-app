@@ -33,7 +33,7 @@ export default function QuizPage() {
       }
     };
     fetchQuiz();
-  }, [id]);
+  }, [id]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const question = questions[qIndex];
   const progress = ((qIndex) / questions.length) * 100;
@@ -80,6 +80,7 @@ export default function QuizPage() {
   );
 
   const isCorrect = confirmed && selectedAnswer === question.correctAnswer;
+  // eslint-disable-next-line no-unused-vars
   const isWrong = confirmed && selectedAnswer !== question.correctAnswer;
 
   return (

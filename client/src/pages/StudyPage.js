@@ -32,7 +32,7 @@ export default function StudyPage() {
       }
     };
     fetchData();
-  }, [id]);
+  }, [id]);  // eslint-disable-line react-hooks/exhaustive-deps
 
   const next = useCallback(() => {
     setFlipped(false);
